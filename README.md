@@ -9,17 +9,18 @@ the bill
 ```
 >>> from trackemathics.value import Value
 >>> 
->>> total = Value(2.95, 'mineral water') + Value(2.50, 'service charge')
+>>> food = Value(2.95, 'mineral water') + Value(3.95, 'olives')
+>>> total = food + (food * Value(0.15, 'service charge rate'))
 >>> 
 >>> total.value
-5.45
+7.9350000000000005
 >>> 
->>> total.value / 2
-2.725
 >>> 
 >>> print(total.narrate())
-i am 5.45. from: 2.95 + 2.5
+i am 7.9350000000000005. from: 6.9 + 1.035
 where:
+i am 1.035. from: 6.9 * 0.15
+i am 6.9. from: 2.95 + 3.95
 i am 2.95. from: mineral water
-i am 2.5. from: service charge
+i am 3.95. from: olives
 ```

@@ -1,7 +1,13 @@
+from .operation_source import OperationSource
+
 class Value:
     def __init__(self, value, source=None):
         self.value = value
         self.source = source
+
+    def __add__(self, other):
+        added = Value(self.value + other.value, OperationSource(f"{self.value} + {other.value}", self, other))
+        return added
 
     @property
     def roots(self):

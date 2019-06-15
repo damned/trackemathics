@@ -18,3 +18,13 @@ def test_value_can_have_an_object_source():
     bingo_four = Value(4, Bingo('knock at the door'))
     assert bingo_four.narrate() == 'i am 4. from: the bingo number, knock at the door'
 
+def test_the_result_of_an_addition_can_narrate_where_it_comes_from():
+    three = Value(3, Bingo('cup of tea'))
+    eight = Value(8, Bingo('garden gate'))
+
+    eleven = three + eight
+    assert eleven.value == 11
+    assert eleven.narrate() == '''i am 11. from: 3 + 8
+where:
+i am 3. from: the bingo number, cup of tea
+i am 8. from: the bingo number, garden gate''' 

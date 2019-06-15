@@ -26,7 +26,7 @@ class Value:
         if (self.source):
             return f"from: {self.source}"
 
-        return 'i am who i am.'
+        return 'i am what i am.'
 
     def narrate(self):
-        return f"i am {self.value}. {self.roots}"
+        return f"{self.value}. {self.roots}"
